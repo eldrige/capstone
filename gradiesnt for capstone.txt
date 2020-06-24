@@ -1,0 +1,9 @@
+linear-gradient(45.34deg, #EA52F8 5.66%, #0066FF 94.35%)
+linear-gradient(45.34deg, #1D2252 5.66%, #72AAFF 50.01%, #00FFFF 94.35%)
+linear-gradient(45deg, #091B6A, #0029FF)
+#50b6bb
+@import url('https://fonts.googleapis.com/css?family=Oswald|Sacramento&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Pinyon+Script&display=swap')
+
+
+A website that retails crypto with details and the diffenret crypto you can buy. in Cameroon

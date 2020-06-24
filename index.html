@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Saver & Generator</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/pswg.png">
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password-Generator and Saver</h1>
+      <h2 class="password-display">Password</h2>
+      <form id="form">
+        <div class="xter-amt">
+          <label for="pLength">Password-Length</label>:
+          <input type="range" id="range" value="10" max="25" min="8" />
+          <input type="number" id="number" min="8" max="25" value="10" />
+        </div>
+        <button type="submit" id="generate" class="generate">GENERATE</button>
+      </form>
+    </div>
+    <section class="container">
+      <h2>Password List</h2>
+        <div class="saved-psw">
+
+        </div>
+    </section>
+  </body>
+</html>
