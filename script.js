@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => { 
 // node elements
 const xterAmtRange = document.getElementById("range");
 const xterAmtNumber = document.getElementById("number");
@@ -10,18 +11,37 @@ const asciiXters = arrayFromLowToHigh(97, 122)
   .concat(arrayFromLowToHigh(58, 64))
   .concat(arrayFromLowToHigh(91, 96))
   .concat(arrayFromLowToHigh(123, 126));
-const savedPsw = document.querySelector('.saved-psw')
+const savedPsw = document.querySelector(".saved-psw");
+
 
 // event listeners
 xterAmtNumber.addEventListener("input", syncSlider);
 xterAmtRange.addEventListener("input", syncSlider);
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const xterAmt = xterAmtNumber.value;
   const password = generatePass(xterAmt);
   displayPassword.innerText = password;
   savePsw(password)
-  // generateBtn.classList.add('disappear')
+  const lists = document.querySelectorAll('.psw')
+  // setTimeout(()=>{
+  //   console.log(lists);
+    
+  // }, 5000)
+  lists.forEach((list)=>{ 
+    list.children[1].addEventListener('click', (e) => {
+      // on each of the passwords, when the delete button gets clicked , we remove the entired div
+      const target = e.target
+      const targetParent = target.parentElement // target the parent elt to suppress the whole div
+      targetParent.remove()
+    })
+  })
+  // lists[0].addEventListener('click', (e) =>{
+  //   const foo = e.target
+  //   const yo = foo.parentElement
+  //   yo.remove()
+  // })
 });
 
 // functions
@@ -40,12 +60,24 @@ function generatePass(xterAmt) {
   }
   return passwordSaver.join("");
 }
-function savePsw(password){
-  let ulList = document.createElement('ul')
-  let liItem = document.createElement('li')
-  liItem.innerText = password
-  ulList.appendChild(liItem)
-  savedPsw.appendChild(ulList)
+function savePsw(password) {
+  let divList = document.createElement("div");
+  divList.classList.add("psw");
+  let liItem = document.createElement("li");
+  liItem.innerText = password;
+
+  let copybutton = document.createElement("button");
+  copybutton.innerHTML = '<i class="fas fa-copy"></i>';
+  copybutton.classList.add("copy-btn");
+  divList.appendChild(copybutton); // add copy button to our current password li item
+
+  let deleteButton = document.createElement("button");
+  deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+  deleteButton.classList.add("trash-btn");
+  divList.appendChild(deleteButton); //add delete button to our current password li item
+
+  divList.appendChild(liItem);
+  savedPsw.appendChild(divList);
 }
 
 function arrayFromLowToHigh(low, high) {
@@ -54,5 +86,10 @@ function arrayFromLowToHigh(low, high) {
     array.push(i);
   }
   return array;
-}
+} 
+
+})
+
+
+
 
