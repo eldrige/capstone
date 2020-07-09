@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- The text field -->
+    <input type="text" value="Hello World" id="myInput" />
+
+    <!-- The button used to copy the text -->
+    <button onclick="myFunction()">Copy text</button>
     <script>
-        //question 2
-        let mynumb = [8,6,7,4,5,6,34,78,34]
-          for(let numbers of mynumb){
-             console.log(numbers)
-        }
-         for(i=0; i < mynumb.length; i++){
-            console.log(mynumb[i])
-         }
-         console.log(mynumb.sort((a,b) => b - a))
-   
-    console.log( mynumb.filter((number) => number % 2 === 0));
-    mynumb.push('prince')
-    console.log(mynumb);
-    
-    
+      function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+      }
     </script>
-</body>
+  </body>
 </html>
