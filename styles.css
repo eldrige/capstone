@@ -1,54 +1,110 @@
-*,*::before,*::after{
-    box-sizing: border-box;
+/* general resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-body{
-    padding: 0;
-    margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #000;
-    font-weight: 300;
-    color: #fff;
+/* body and grid */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #000;
+  font-weight: 300;
+  color: #fff;
 }
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  height: 25vh;
+  justify-content: space-evenly;
+}
+/* generate button styling */
+.generate {
+  background: black;
+  border: 4.2px solid red;
+  color: #fff;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  width: 10rem;
+  margin: 0 auto;
+}
+.generate:hover {
+  background: white;
+  color: #000;
+  cursor: pointer;
+}
+/* typogrpahy */
+h1 {
+  color: #fff;
+}
+h1:hover {
+  color: #ccc;
+}
+h2.password-display {
+  color: #ccc;
+}
+li {
+  list-style-type: none;
+  color: #000;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.5rem;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 2rem;
+}
+.psw{
+  margin: 0.5rem;
+  background: rgb(233, 224, 224);
+  color: #000;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+.disappear {
+  display: none;
+}
+/* Responsiveness */
 
+/* psw button styling */
+
+.trash-btn,
+.copy-btn {
+  background: #cf0000;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  cursor: pointer;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    justify-content: space-evenly;
+.copy-btn {
+  background: rgb(73, 204, 73);
 }
-.generate{
-    background: black;
-    border: 4px solid red;
-    color: #fff;
-    padding: .75rem .75rem;
-    border-radius: .5rem;
-    font-size: .75rem;
-    font-weight: bold;
+/* .trash-btn{
+
+} */
+.fa-trash,
+.fa-copy {
+  pointer-events: none;
+  /* this makes this items non clickable */
 }
-.generate:hover{
-    background: white;
-    color: #000;
-    cursor: pointer;
+
+
+.trash-btn:hover{
+  background-color: rgb(253, 83, 83);
 }
-h1{
-    color: #ccc;
-}
-h1:hover{
-    color: #fff;
-}
-li{
-    list-style-type: none;
-    color: #ccc;
-    font-size: 1.2rem;
-    padding: 0.5rem 0.5rem;
-    width: 100%;
-}
-.disappear{
-    display: none
+.copy-btn:hover{
+  background-color: rgb(162, 240, 210);
 }
